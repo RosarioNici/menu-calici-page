@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  template: `
+    <nav>
+      <a routerLink="/ristorante">Ristorante</a>
+      <a routerLink="/pizzeria">Pizzeria</a>
+      <a routerLink="/drink">Drink</a>
+      <a routerLink="/vini">Vini</a>
+      <a routerLink="/aperitivi">Aperitivi</a>
+    </nav>
+    <router-outlet></router-outlet>  <!-- Assicurati che ci sia questo -->
+  `,
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'menu-calici-page';
